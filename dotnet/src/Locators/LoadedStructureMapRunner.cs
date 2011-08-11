@@ -1359,7 +1359,7 @@ x.For<IDummy221>().LifecycleIs(new StructureMap.Pipeline.UniquePerRequestLifecyc
 
 		public void Run(Type t, string name) {
 			IDummy d;
-		    d = (ObjectFactory.TryGetInstance(t, name) as IDummy);
+		    d = ObjectFactory.GetNamedInstance(t, name) as IDummy;
             d.Do();
 		}
 	}
