@@ -1359,10 +1359,8 @@ x.For<IDummy221>().LifecycleIs(new StructureMap.Pipeline.UniquePerRequestLifecyc
 
 		public void Run(Type t, string name) {
 			IDummy d;
-			if ((d = (ObjectFactory.TryGetInstance(t, name) as IDummy)) != null)
-				d.Do();
-			else
-				throw new InvalidOperationException(string.Format("{0} couldn't find a dummy to practice on.", this.Name));
+		    d = (ObjectFactory.TryGetInstance(t, name) as IDummy);
+            d.Do();
 		}
 	}
 }

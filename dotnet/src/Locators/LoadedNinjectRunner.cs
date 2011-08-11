@@ -1358,10 +1358,8 @@ k.Bind<IDummy221>().To<SimpleDummy665>().InTransientScope().Named("2");
 
 		public void Run(Type t, string name) {
 			IDummy d;
-			if ((d = (k.TryGet(t, name) as IDummy)) != null)
-				d.Do();
-			else
-				throw new InvalidOperationException(string.Format("{0} couldn't find a dummy to practice on.", this.Name));
+		    d = (k.Get(t, name) as IDummy);
+            d.Do();
 		}
 	}
 }
